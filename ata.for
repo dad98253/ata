@@ -386,7 +386,7 @@ C     ------------------CALCULATION OF RAY BENDING---------------
       WRITE(IOT,818) EIRP             
       GO TO 817         
   792 WRITE(IOT,722)EIRP              
-      PDCON=38.544-20.*ALOG10(F)      
+      PDCON=38.544-20.*LOG10(F)      
       PIRP=EIRP-PDCON                 
   817 WRITE(IOT,721)    
       CALL ANTNA(0.,IFA,HLPBW,T1T,GFVD,GFHD,GFV,IPL)              
@@ -559,12 +559,12 @@ C     --------------END OF PRELIMINARY PRINTING------------------
       WRITE(IOT,4)      
       CALL PAGE(0)      
       WRITE(IOT,5)      
-      AFP=32.45+20.*ALOG10(FREK)      
+      AFP=32.45+20.*LOG10(FREK)      
           
 C     ----HORIZON POINT DISTANCE AND PARAMETER CALCULATION------- 
       DNM=DML*CKN(IK)                 
       D=DML             
-      TWEND=20.*ALOG10(D)             
+      TWEND=20.*LOG10(D)             
       ALFS=AFP+TWEND    
       DLR=D-DLT         
       HTP=HRP           
@@ -593,7 +593,7 @@ C     ----------------------DIFFRACTION----------------------
       CALL GANE(TER,IAA,H2PBW,T2T,GAVD,GAHD,GAV,IPL)              
       GVD=GFV*GAV       
       IF (IPL .GE. 3) GVD=0.5*(GFVD*GAVD+GFHD*GAHD)               
-      GDD=20.*ALOG10(GVD)             
+      GDD=20.*LOG10(GVD)             
       SMD=((AINT(DNM/1.))*1.)+1.      
       AMD=AWD+(SWP*D)                 
       ATD=AMD           
@@ -637,7 +637,7 @@ C     -----------------------------------------------------------
       DQS=DML-DLT-DLR                 
       IF(DQS.LT.0.) DQS=0.            
       DQ=T1+T2+DQS      
-      ALFS=AFP+20.*ALOG10(DQ)         
+      ALFS=AFP+20.*LOG10(DQ)         
       DQD(1)=ALFS       
       GS(1)=GDD         
 C     ------------------LINE-OF-SIGHT---------------------------- 
@@ -676,7 +676,7 @@ C     -------------BEYOND THE HORIZON CALCULATIONS---------------
       CALL GANE(TER,IAA,H2PBW,T2T,GAVD,GAHD,GAV,IPL)              
       GVD=GFV*GAV       
       IF (IPL .GE. 3) GVD=0.5*(GFVD*GAVD+GFHD*GAHD)               
-      GDD=20.*ALOG10(GVD)             
+      GDD=20.*LOG10(GVD)             
       IF(KFD-1)40,41,42               
    40 KR=0              
       KC=0              
@@ -699,7 +699,7 @@ C     -------------BEYOND THE HORIZON CALCULATIONS---------------
       DQS=D-DLT-DLR     
       IF(DQS.LT.0.) DQS=0.            
       DQ=T1+T2+DQS      
-      ALFS=AFP+20.*ALOG10(DQ)         
+      ALFS=AFP+20.*LOG10(DQ)         
       DQD(KS)=ALFS      
       SCT(KS)=ALSC      
       AAD(KS)=AA        
@@ -708,7 +708,7 @@ C     -------------BEYOND THE HORIZON CALCULATIONS---------------
       CALL GANE(TER,IAA,H2PBW,T2T,GAVD,GAHD,GAV,IPL)              
       GVD=GFV*GAV       
       IF (IPL .GE. 3) GVD=0.5*(GFVD*GAVD+GFHD*GAHD)               
-      GDD=20.*ALOG10(GVD)             
+      GDD=20.*LOG10(GVD)             
       GS(KS)=GDD        
       IF(SCT(KS).LT.20.) GO TO 31     
       KR=KR+1           
@@ -789,12 +789,12 @@ C     -------------BEYOND THE HORIZON CALCULATIONS---------------
       DQS=D-DLT-DLR     
       IF(DQS.LT.0.) DQS=0.            
       DQ=T1+T2+DQS      
-      ALFS=AFP+20.*ALOG10(DQ)         
+      ALFS=AFP+20.*LOG10(DQ)         
       IF(JS.GT.0)T2T=TER*DEG          
       CALL GANE(TER,IAA,H2PBW,T2T,GAVD,GAHD,GAV,IPL)              
       GVD=GFV*GAV       
       IF (IPL .GE. 3) GVD=0.5*(GFVD*GAVD+GFHD*GAHD)               
-      GDD=20.*ALOG10(GVD)             
+      GDD=20.*LOG10(GVD)             
       ATS=ALSC          
       IF(ATS.LE.ATD) GO TO 46         
       ATTS=ATD          
@@ -812,7 +812,7 @@ C     -------------BEYOND THE HORIZON CALCULATIONS---------------
       DQS=D-DLT-DLR     
       IF(DQS.LT.0.) DQS=0.            
       DQ=T1+T2+DQS      
-      ALFS=AFP+20.*ALOG10(DQ)         
+      ALFS=AFP+20.*LOG10(DQ)         
       ATS=ALSC          
       ATTS=ATS          
       ASSIGN 37 TO KT                 
@@ -820,7 +820,7 @@ C     -------------BEYOND THE HORIZON CALCULATIONS---------------
       CALL GANE(TER,IAA,H2PBW,T2T,GAVD,GAHD,GAV,IPL)              
       GVD=GFV*GAV       
       IF (IPL .GE. 3) GVD=0.5*(GFVD*GAVD+GFHD*GAHD)               
-      GDD=20.*ALOG10(GVD)             
+      GDD=20.*LOG10(GVD)             
   200 CONTINUE          
 C     ----------------LONG-TERM POWER FADING--------------------- 
       IF(D-DSL1)311,311,312           
@@ -1116,7 +1116,7 @@ C     --------------------MISCELLANEOUS STATEMENTS---------------
       GO TO 802         
   803 EART=ENO          
       EFRTH=EART*CMK(IK)              
-      ENS=ALOG((1.-(6370./EFRTH))/.04665)           
+      ENS=LOG((1.-(6370./EFRTH))/.04665)           
       ENO=ENS/EXP(-0.1057*HRP)        
       GO TO 804         
   805 ICAR=1            

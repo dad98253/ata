@@ -9,6 +9,8 @@ ACLOCAL_AMFLAGS = -I m4 --install
 bin_PROGRAMS = $(top_builddir)/bin/ata
 __top_builddir__bin_ata_SOURCES = $(ATAMAIN) $(ATASOURCES)
 
+AM_FFLAGS = -fno-align-commons -std=legacy
+
 if LINUX
 @GENERATE_CHANGELOG_RULES@
   dist-hook: dist-ChangeLog

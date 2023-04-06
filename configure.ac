@@ -68,6 +68,8 @@ AC_DEFINE_UNQUOTED(ATA_VERSION_2, $ata_version_2, [ ATA version level 2. ])
 AC_DEFINE_UNQUOTED(ATA_VERSION_3, $ata_version_3, [ ATA version level 3. ])
 AC_SUBST(ATA_VERSION, $ata_version)
 
+
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
 
