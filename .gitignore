@@ -34,3 +34,15 @@
 *.ncb
 *.opt
 /ata/
+
+Makefile
+Makefile.in
+aclocal.m4
+/autom4te.cache/
+/bin/
+/build-aux/
+config.log
+config.status
+configure
+configure~
+/m4/
