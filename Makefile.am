@@ -5,6 +5,8 @@ include ataINCS.inc
 
 ACLOCAL_AMFLAGS = -I m4 --install
 
+EXTRA_DIST = inputFormat.txt tape5.txt tape6.txt
+
 #build ata
 bin_PROGRAMS = $(top_builddir)/bin/ata
 __top_builddir__bin_ata_SOURCES = $(ATAMAIN) $(ATASOURCES)
