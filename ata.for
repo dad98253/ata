@@ -371,7 +371,7 @@ C     ------------------CALCULATION OF RAY BENDING---------------
       WRITE(IOT,5)      
       WRITE(IOT,704)    
       WRITE(IOT,720)    
-      CALL ANTNA(0.,IAA,H2PBW,T2T,GAVD,GAHD,GAV,IPL)              
+      CALL ANTNA(0.0d0,IAA,H2PBW,T2T,GAVD,GAHD,GAV,IPL)              
       H2PTW=2.*H2PBW    
       IF(H2PBW.GT..01) WRITE(IOT,756)H2PTW          
       WRITE(IOT,707) POL(NPL)         
@@ -389,7 +389,7 @@ C     ------------------CALCULATION OF RAY BENDING---------------
       PDCON=38.544-20.*LOG10(F)      
       PIRP=EIRP-PDCON                 
   817 WRITE(IOT,721)    
-      CALL ANTNA(0.,IFA,HLPBW,T1T,GFVD,GFHD,GFV,IPL)              
+      CALL ANTNA(0.0d0,IFA,HLPBW,T1T,GFVD,GFHD,GFV,IPL)              
       HLPTW=2.*HLPBW    
       IF(HLPBW.GT..01) WRITE(IOT,756)HLPTW          
       WRITE(IOT,707) POL(IPL)         
