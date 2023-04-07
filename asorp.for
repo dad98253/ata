@@ -689,7 +689,7 @@ C     ----------------- JTAC -------------------------------------------
       GDR=GAIN          
       RETURN            
           
-      ENTRY ANTNA       
+      ENTRY ANTNA (X,ITA,HH,TT,GAV,GAH,GDR,NP)        
       A=X               
       IFA=ITA           
       HPBW=HH           
