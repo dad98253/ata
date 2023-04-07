@@ -1162,7 +1162,7 @@ C     --------------------MISCELLANEOUS STATEMENTS---------------
 C     -------------------TERMINATION OF PROGRAM------------------ 
   451 WRITE(IOT,4)      
       WRITE(IOT,2)      
-      STOP              
+C      STOP              
       END               
       BLOCK DATA SOME                 
         implicit real*8(A-H,O-Z)
